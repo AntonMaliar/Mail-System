@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Read letters</title>
+    <style>
+        .body {
+        display:flex;
+        }
+        .left,right {
+        height:100vh;
+        }
+        .left {
+        width:20%;
+        }
+        .right{
+        display:flex;
+        flex-direction:column;
+        width:80%;
+        }
+    </style>
+</head>
+<body>
+<a href="/user/account">My account</a>
+<hr>
+<div class="body">
+    <div class="left">
+        <a href="/letter/write">Write letter</a>
+        <br>
+        <a href="/letter/incoming">Incoming letters</a>
+        <br>
+        <a href="/letter/sent">Sent letters</a>
+    </div>
+    <hr>
+    <div class="right">
+        <div th:each="letter : ${readLetters}">
+            <span>sender:</span>
+            <span th:text="${letter.getSender().getName()}"></span>
+            <span th:text="${letter.getSender().getSurname()}"></span>
+            <span th:text="${letter.getDate()}"></span>
+            <span th:text="${letter.getTime()}"></span>
+            <span><a th:href="@{/letter/view/{id}(id=${letter.getId()})}">open</a></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Account</title>
+    <style>
+        .body {
+        display:flex;
+        }
+        div {
+        height:100vh;
+        }
+        .left {
+        width:20%;
+        }
+        .right{
+        width:80%;
+        }
+    </style>
+</head>
+<body>
+<h2 th:text="${user.getName()}"></h2>
+<h2 th:text="${user.getSurname()}"></h2>
+<hr>
+<a href="/user/update">Change info about me</a>
+<br>
+<a href="/user/log-out">Log out</a>
+<hr>
+<a href="/letter/write">Write letter</a>
+<br>
+<a href="/letter/incoming">Incoming letters</a>
+<br>
+<a href="/letter/sent">Sent letters</a>
+<br>
+<a href="/letter/read">Read letters</a>
+</body>
+</html>

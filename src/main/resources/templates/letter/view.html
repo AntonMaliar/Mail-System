@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Letter</title>
+</head>
+<body>
+    <a href="/user/account">My account</a>
+    <hr>
+    <span>sender:</span>
+    <span th:text="${letter.getSender().getName()}"></span>
+    <span th:text="${letter.getSender().getSurname()}"></span>
+    <br>
+    <span>receiver:</span>
+    <span th:text="${letter.getReceiver().getName()}"></span>
+    <span th:text="${letter.getReceiver().getSurname()}"></span>
+    <br>
+    <span>date:</span>
+    <span th:text="${letter.getDate()}"></span>
+    <br>
+    <span>time:</span>
+    <span th:text="${letter.getTime()}"></span>
+    <hr>
+    <span th:text="${letter.getBody()}"></span>
+    <hr>
+    <span><a href="/letter/write">answer</a></span>
+    <span><a th:href="@{/letter/delete/{id}(id=${letter.getId()})}">delete</a></span>
+</body>
+</html>

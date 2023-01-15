@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+</head>
+<body>
+    <h1>My Email Service</h1>
+    <hr>
+    <a href="/user/create">Create user</a>
+    <br>
+    <p th:text="${error}"></p>
+    <a href="/user/log-in">Log in</a>
+</body>
+</html>

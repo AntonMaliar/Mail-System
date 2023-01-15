@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Write letter</title>
+</head>
+<body>
+    <a href="/user/account">My account</a>
+    <hr>
+    <form action="/letter/send" method="post">
+        <label for="address_mail">Enter the recipient's email address:</label>
+        <input type="email" id="address_mail" name="address_mail">
+        <br>
+        <p>Enter message:</p>
+        <textarea name="body_message"></textarea>
+        <input type="submit" value="send">
+    </form>
+</body>
+</html>
